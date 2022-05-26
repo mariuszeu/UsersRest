@@ -1,0 +1,35 @@
+<div class="user-edit-modal">
+  <h2 mat-dialog-title>Edycja użytkownika</h2>
+  <mat-dialog-content class="mat-typography">
+
+    <mat-form-field class="user-edit-width" appearance="fill">
+      <mat-label>ID</mat-label>
+      <input type="text" matInput value="{{data.id}}">
+    </mat-form-field>
+
+    <mat-form-field class="user-edit-width" appearance="fill">
+      <mat-label>Nazwa użytkownika</mat-label>
+      <input type="text" matInput value="{{data.username}}">
+    </mat-form-field>
+
+    <mat-form-field class="user-edit-width" appearance="fill">
+      <mat-label>Adres e-mail</mat-label>
+      <input type="email" matInput>
+    </mat-form-field>
+
+    <mat-form-field class="user-edit-width" appearance="fill">
+    <mat-label>Rola</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option>-</mat-option>
+      <mat-option value="role1">Rola 1</mat-option>
+      <mat-option value="role2">Rola 2</mat-option>
+      <mat-option value="role3">Rola 3</mat-option>
+    </mat-select>
+    </mat-form-field>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Anuluj</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Zapisz</button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,18 @@
+.user-edit-modal {
+  width: 500px;
+}
+
+
+.user-edit-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.user-edit-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
