@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {UserDetail} from '../models'
 import {MatDialog} from '@angular/material/dialog';
 import { UserEditComponent } from './user-edit/user-edit.component';
-
-export interface UserData {
-  id: number;
-  username: string;
-  email?: string;
-  role?: string;
-}
 
 @Component({
   selector: 'app-users',
@@ -16,7 +10,7 @@ export interface UserData {
 })
 export class UsersComponent implements OnInit {
 
-  userData: UserData = {
+  userData: UserDetail = {
     id: 1,
     username: 'test',
     email: ''

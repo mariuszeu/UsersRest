@@ -1,6 +1,6 @@
 import { Component, Inject, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import {UserData} from "../users.component";
+import {UserDetail} from '../../models'
 
 @Component({
   selector: 'app-user-edit',
@@ -14,7 +14,7 @@ export class UserEditComponent {
 
   constructor(
     public dialogRef: MatDialogRef<UserEditComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: UserData
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: UserDetail
   ) { }
 
 

@@ -4,3 +4,11 @@
 .waves-light {
   background-color: #4343b2;
 }
+.login-error {
+  margin-top: 10px;
+  font-size: larger;
+  color: #c53a3a;
+}
+label {
+  margin-top: 35px;
+}

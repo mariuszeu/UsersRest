@@ -10,6 +10,6 @@
 </div>
 
 <div class="container">
-  <app-login ></app-login>
-  <app-users ></app-users>
+  <app-login (ifLogged)="onIfLogged($event)" *ngIf="!ifLogged"></app-login>
+  <app-users *ngIf="ifLogged"></app-users>
 </div>

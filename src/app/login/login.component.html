@@ -10,7 +10,7 @@
           <div class="row">
             <div class="input-field col s12">
               <input id="username" type="text" class="validate"
-
+              [(ngModel)]="loginData.username"
               >
               <label for="username">Nazwa użytkownika</label>
             </div>
@@ -19,7 +19,8 @@
           <div class="row">
             <div class="input-field col s12">
               <input id="password" type="password" class="validate"
-
+              [(ngModel)]="loginData.password"
+              (keyup.enter)="loginToApp()"
               >
               <label for="password">Hasło</label>
             </div>
@@ -27,13 +28,15 @@
 <!-- button submit -->
           <div class="row center-align">
             <div class="col s12">
-              <button class="btn waves-effect waves-light" type="submit" name="action">
-
-                Zaloguj się
-                <i class="material-icons right">send</i>
+              <button class="btn waves-effect waves-light" type="submit" name="action"
+              (click)="loginToApp()"
+              [disabled]="loginData.password.length == 0 || loginData.username.length == 0"
+              >
+              Zaloguj się
+              <i class="material-icons right">send</i>
               </button>
-              <p class="flow-text">
-
+              <p class="flow-text login-error">
+                {{ logged?.error }}
               </p>
             </div>
           </div>
