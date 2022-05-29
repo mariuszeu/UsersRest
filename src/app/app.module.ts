@@ -1,7 +1,11 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
+import {initializer} from './app-initializer';
+import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
+import {KeycloakConfigService} from './keycloak/keycloak-config.service';
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
@@ -14,7 +18,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
-
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 
 @NgModule({
