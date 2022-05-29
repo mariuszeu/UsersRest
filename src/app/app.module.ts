@@ -26,6 +26,8 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    KeycloakAngularModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -35,7 +37,18 @@ import {FormsModule} from "@angular/forms";
     MatSelectModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService, KeycloakConfigService]
+    },
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
