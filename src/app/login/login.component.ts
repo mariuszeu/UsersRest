@@ -12,9 +12,10 @@ import {HttpResponse} from "@angular/common/http";
 })
 export class LoginComponent implements OnInit {
 
-  loginData = <UserLogin>{ username: '', password: ''};
+  loginData = <UserLogin>{ username: 'admin', password: 'haslo'};
   logged: LoginResult | undefined;
-  userDetail: UserDetail | undefined;
+  // userDetail: UserDetail | undefined;
+  userDetail: UserDetail[] = [];
   @Output() ifLogged = new EventEmitter<boolean>();
 
   constructor(private loginService: LoginService) { }
@@ -34,7 +35,8 @@ export class LoginComponent implements OnInit {
         // console.log(value.headers.keys())
         // console.log(value.headers.get('Authorization'))
 
-        this.userDetail = value.body as UserDetail;
+        // this.userDetail = value.body as UserDetail;
+        this.userDetail = value.body;
         this.logged = {result: value.ok, error: value.status.toString()}
         this.ifLogged.emit(value.ok);
       }

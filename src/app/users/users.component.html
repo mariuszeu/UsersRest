@@ -1,6 +1,6 @@
 <div class="row users">
 
-  <table class="responsive-table">
+  <table class="responsive-table" *ngIf="users?.length > 0">
     <thead>
     <tr>
       <th>ID</th>
@@ -12,26 +12,12 @@
     </thead>
 
     <tbody>
-    <tr>
-      <td>1</td>
-      <td>test</td>
-      <td>test@test.pl</td>
-      <td>user</td>
-      <td><a class="user-edit-ico" (click)="editModal()"><i class="material-icons">edit</i></a></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>test 2</td>
-      <td>test@test.pl</td>
-      <td>user</td>
-      <td><a class="user-edit-ico" (click)="editModal()"><i class="material-icons">edit</i></a></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>test 3</td>
-      <td>test@test.pl</td>
-      <td>user</td>
-      <td><a class="user-edit-ico" (click)="editModal()"><i class="material-icons">edit</i></a></td>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.roles}}</td>
+      <td><a class="user-edit-ico" (click)="editModal(user.id)"><i class="material-icons">edit</i></a></td>
     </tr>
     </tbody>
   </table>

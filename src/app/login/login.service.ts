@@ -9,15 +9,15 @@ import {Observable, tap} from "rxjs";
 })
 export class LoginService {
 
-  private url = 'http://apiresttest.eba-wggmghuj.us-east-1.elasticbeanstalk.com';
-
+  // private url = 'http://apiresttest.eba-wggmghuj.us-east-1.elasticbeanstalk.com/api/auth/login';
+  private url = 'http://localhost:3010/users';
   private loginData = <UserLogin>{};
 
   constructor(private http: HttpClient) { }
 
 
   checkAccount(loginData: UserLogin): Observable<HttpResponse<UserDetail[]>> {
-    return this.http.post<HttpResponse<UserDetail[]>>(this.url + '/api/auth/login', loginData, {observe: 'response'})
+    return this.http.post<HttpResponse<UserDetail[]>>(this.url, loginData, {observe: 'response'})
       .pipe(tap(console.log));
   }
 

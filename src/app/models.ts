@@ -5,9 +5,10 @@ export interface UserLogin {
 
 export interface UserDetail {
   id?: number;
-  username?: string;
+  username: string;
+  password: string;
   email?: string;
-  roles?: []
+  roles?: string
 }
 
 export interface LoginResult {

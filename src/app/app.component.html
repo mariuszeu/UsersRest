@@ -2,8 +2,8 @@
   <nav>
     <div class="nav-wrapper">
       <span class="brand-logo">{{title}}</span>
-      <ul class="right hide-on-med-and-down" >
-        <li><a title="Wyloguj się" ><i class="material-icons">logout</i></a></li>
+      <ul class="right hide-on-med-and-down" *ngIf="ifLogged">
+        <li><a href="http://localhost:4212" title="Wyloguj się"><i class="material-icons">logout</i></a></li>
       </ul>
     </div>
   </nav>
